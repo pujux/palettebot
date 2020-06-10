@@ -3,7 +3,9 @@ const AlphaFB = require('@alpha-manager/fb'),
 	Vibrant = require('node-vibrant'),
 	path = require('path')
 
-require('dotenv').config()
+const result = require('dotenv').config()
+result.error && console.error(result.error)
+
 const fb = new AlphaFB().config({
 	id: 311738659492506,
 	token: process.env.TOKEN
