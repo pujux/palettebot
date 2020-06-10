@@ -12,10 +12,8 @@ const canvas = createCanvas(600, 700)
 const ctx = canvas.getContext('2d')
 
 new alpha.Task().to(fb).do(async actionObject => {
-  console.info(`${new Date()} | fetching image`)
-  const img = await loadImage('https://source.unsplash.com/random/600x600')
-  console.info(`${new Date()} | finished download`)
-  ctx.drawImage(img, 0, 0, 600, 600)
+  console.info(`${new Date().toISOString()} | starting post`)
+  ctx.drawImage((await loadImage('https://source.unsplash.com/random/600x600')), 0, 0, 600, 600)
   const palette = await Vibrant.from(canvas.toBuffer()).getPalette()
   ctx.fillStyle = '#fff'
   ctx.fillRect(0, 600, 600, 100)
@@ -27,12 +25,12 @@ new alpha.Task().to(fb).do(async actionObject => {
   const fs = require('fs')
   const out = fs.createWriteStream(__dirname + '/test.jpeg')
   out.on('finish', () => {
-    console.info(`${new Date()} | posting image`)
-    actionObject.type = "post"
+    actionObject.type = 'post'
     actionObject.message = `Colors extracted: ${Object.keys(palette).map(key => palette[key].getHex()).join(', ')}`
     actionObject.media = __dirname + '/test.jpeg'
     actionObject.done()
-    console.info(`${new Date()} | image posted`)
+    console.info(`${new Date().toISOString()} | posting finished`)
+    ctx.clearRect(0, 0, 600, 700)
   })
   canvas.createJPEGStream().pipe(out)
 }).every(15).minute().start()
