@@ -10,9 +10,16 @@
     "dotenv": "8.2.0",
     "node-vibrant": "3.2.0-alpha"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "@aero/eslint-config": "^1.0.1",
+    "eslint": "^6.8.0",
+    "nodemon": "^2.0.3"
+  },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node app.js",
+    "dev": "nodemon app.js",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix"
   },
   "keywords": [
     "bot",
