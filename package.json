@@ -19,5 +19,13 @@
     "fb"
   ],
   "author": "puf17640",
-  "license": "ISC"
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/puf17640/palettebot.git"
+  },
+  "bugs": {
+    "url": "https://github.com/puf17640/palettebot/issues"
+  },
+  "homepage": "https://github.com/puf17640/palettebot#readme"
 }
