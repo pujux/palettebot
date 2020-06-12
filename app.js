@@ -1,6 +1,7 @@
 const AlphaFB = require('@alpha-manager/fb'),
 	alpha = require('@alpha-manager/core'),
 	Vibrant = require('node-vibrant'),
+	fs = require('fs'),
 	path = require('path')
 
 const result = require('dotenv').config()
@@ -26,7 +27,6 @@ new alpha.Task().to(fb).do(async actionObject => {
 		ctx.fillStyle = palette[keys[i]].getHex()
 		ctx.fillRect(45 + (i * 60) + (i * 30), 620, 60, 60)
 	}
-	const fs = require('fs')
 	const out = fs.createWriteStream(path.join(__dirname, '/test.jpeg'))
 	out.on('finish', () => {
 		actionObject.type = 'post'
