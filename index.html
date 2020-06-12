@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PaletteBot</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="drop-zone">
+    <p>Drop your image here</p>
+    <input id="file-input" type="file" accept="image/*" hidden>
+   </div>
+   <div id="preview-zone" style="display: none;">
+     <img id="preview-img" hidden>
+     <canvas id="preview"></canvas>
+   </div>
+   <script src="browser.js"></script>
+</body>
+</html>
