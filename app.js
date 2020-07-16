@@ -18,7 +18,7 @@ const ctx = canvas.getContext('2d')
 
 new alpha.Task().to(fb).do(async actionObject => {
 	console.log(`${new Date().toISOString()} | starting post`)
-	ctx.drawImage(await loadImage('https://source.unsplash.com/random/600x600?art,sculpture'), 0, 0, 600, 600)
+	ctx.drawImage(await loadImage('https://source.unsplash.com/random/600x600?nature,outdoor'), 0, 0, 600, 600)
 	const palette = await Vibrant.from(canvas.toBuffer()).getPalette()
 	ctx.fillStyle = '#fff'
 	ctx.fillRect(0, 600, 600, 100)
