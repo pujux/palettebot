@@ -37,4 +37,4 @@ new alpha.Task().to(fb).do(async actionObject => {
 		ctx.clearRect(0, 0, 600, 700)
 	})
 	canvas.createJPEGStream().pipe(out)
-}).every(15).minute().start()
+}).every(30).minute().start()
